@@ -37,7 +37,29 @@
 <!--  </mat-form-field>-->
 <!--  <mat-button-toggle class="btn">Send</mat-button-toggle>-->
 <!--</div>-->
-
-
 <app-login></app-login>
-<app-registration></app-registration>
+
+<!--<div *ngIf="!isTokenPresent">-->
+<!--  <button (click)="registrationPatient()">Patient</button>-->
+<!--  <button (click)="registrationDoctor()">Doctor</button>-->
+<!--  <button (click)="registrationLaboratory()">Laboratory</button>-->
+<!--</div>-->
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle (click)="registrationPatient()">Пацієнт</mat-button-toggle>
+  <mat-button-toggle (click)="registrationDoctor()">Лікар</mat-button-toggle>
+  <mat-button-toggle (click)="registrationLaboratory()">Лабораторія</mat-button-toggle>
+</mat-button-toggle-group>
+
+<div *ngIf="isRegistrationPatientClicked !=false">
+  <app-patient></app-patient>
+</div>
+<div *ngIf="isRegistrationDoctorClicked">
+  <app-doctor></app-doctor>
+</div>
+
+<div *ngIf="isRegistrationLaboratoryClicked">
+  <app-laboratory></app-laboratory>
+</div>
+
+<!--<app-registration></app-registration>-->
+
