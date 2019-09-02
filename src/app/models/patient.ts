@@ -1,5 +1,6 @@
 import {User} from './user';
-import {Gender} from '../gender/Gender';
+import {Gender} from './gender';
+import {Role} from './role';
 
 export class Patient extends User {
 
@@ -11,9 +12,12 @@ export class Patient extends User {
               public image?: string,
               public username?: string,
               public password?: string,
-              public phone?: number,
+              public phone?: string,
               public dateOfBirth?: string,
-              public authorities?: []) {
-    super(id, name, username, password, phone, dateOfBirth, authorities);
+              public role?: Role.ROLE_PATIENT,
+              // public authorities?: []
+  ) {
+    super(id, name, username, password, role, phone, dateOfBirth, /*authorities*/);
   }
 }
+

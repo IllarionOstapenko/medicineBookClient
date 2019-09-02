@@ -13,6 +13,7 @@ export class ImageService {
   uploadImage(file: File, u): Observable<any> {
     const formData = new FormData();
     formData.append('image', file, u);
-    return this.http.post('http://localhost:8080/save/photo', formData);
+    return this.http.post('http://localhost:8080/create/user/photo', formData);
   }
 }
+

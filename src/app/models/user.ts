@@ -1,4 +1,5 @@
-import {Gender} from '../gender/Gender';
+import {Gender} from './gender';
+import {Role} from './role';
 
 
 export class User {
@@ -7,9 +8,11 @@ export class User {
               public name?: string,
               public username?: string,
               public password?: string,
-              public phone?: number,
+              public role?: Role,
+              public phone?: string,
               public dateOfBirth?: string,
-              public authorities?: []) {
+              // public authorities?: []
+  ) {
   }
 
 }

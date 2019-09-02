@@ -1,65 +1,48 @@
-<!--<mat-checkbox>Check me!</mat-checkbox>-->
-
-
-<!--<mat-chip-list aria-label="Fish selection">-->
-<!--  <mat-chip>One fish</mat-chip>-->
-<!--  <mat-chip>Two fish</mat-chip>-->
-<!--  <mat-chip color="primary" selected>Primary fish</mat-chip>-->
-<!--  <mat-chip color="accent" selected>Accent fish</mat-chip>-->
-<!--</mat-chip-list>-->
-
-
-<!--<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
-<!--  <mat-icon>more_vert</mat-icon>-->
-<!--</button>-->
-<!--<mat-menu #menu="matMenu">-->
-<!--  <button mat-menu-item>-->
-<!--    <mat-icon>dialpad</mat-icon>-->
-<!--    <span>Redial</span>-->
-<!--  </button>-->
-<!--  <button mat-menu-item disabled>-->
-<!--    <mat-icon>voicemail</mat-icon>-->
-<!--    <span>Check voice mail</span>-->
-<!--  </button>-->
-<!--  <button mat-menu-item>-->
-<!--    <mat-icon>notifications_off</mat-icon>-->
-<!--    <span>Disable alerts</span>-->
-<!--  </button>-->
-<!--</mat-menu>-->
-
-
-<!--<div class="example-container">-->
-<!--  <mat-form-field>-->
-<!--    <input matInput placeholder="Login">-->
-<!--  </mat-form-field>-->
-<!--  <mat-form-field>-->
-<!--    <input matInput placeholder="Password">-->
-<!--  </mat-form-field>-->
-<!--  <mat-button-toggle class="btn">Send</mat-button-toggle>-->
-<!--</div>-->
 <app-login></app-login>
-
-<!--<div *ngIf="!isTokenPresent">-->
-<!--  <button (click)="registrationPatient()">Patient</button>-->
-<!--  <button (click)="registrationDoctor()">Doctor</button>-->
-<!--  <button (click)="registrationLaboratory()">Laboratory</button>-->
-<!--</div>-->
+<!--<mat-button-toggle-group name="fontStyle" aria-label="Font Style">-->
+<!--  <mat-button-toggle [disabled]="isRegistrationPatientClicked"-->
+<!--                     (click)="registrationPatient()">-->
+<!--    Пацієнт-->
+<!--  </mat-button-toggle>-->
+<!--  <mat-button-toggle (click)="registrationDoctor()">Лікар</mat-button-toggle>-->
+<!--  <mat-button-toggle (click)="registrationLaboratory()">Лабораторія</mat-button-toggle>-->
+<!--</mat-button-toggle-group>-->
 <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle (click)="registrationPatient()">Пацієнт</mat-button-toggle>
-  <mat-button-toggle (click)="registrationDoctor()">Лікар</mat-button-toggle>
-  <mat-button-toggle (click)="registrationLaboratory()">Лабораторія</mat-button-toggle>
+  <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
+  <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
+  <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
 </mat-button-toggle-group>
 
-<div *ngIf="isRegistrationPatientClicked !=false">
-  <app-patient></app-patient>
-</div>
-<div *ngIf="isRegistrationDoctorClicked">
-  <app-doctor></app-doctor>
-</div>
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
+  <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
+  <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
+</mat-button-toggle-group>
 
-<div *ngIf="isRegistrationLaboratoryClicked">
-  <app-laboratory></app-laboratory>
-</div>
 
+
+<!--some comment-->
+
+
+<!--<div *ngIf="isRegistrationPatientClicked">-->
+<!--  <app-patient></app-patient>-->
+<!--</div>-->
+<!--<div *ngIf="isRegistrationDoctorClicked">-->
+<!--  <app-doctor></app-doctor>-->
+<!--</div>-->
+
+<!--<div *ngIf="isRegistrationLaboratoryClicked">-->
+<!--  <app-laboratory></app-laboratory>-->
+<!--</div>-->
+
+<!--<button (click)="showPatients()">show patients</button>-->
+<!--<button (click)="getAllPatients()">Get All Patients</button>-->
 <!--<app-registration></app-registration>-->
+<!--<button (click)="getAllDoctors()">Get All Doctors</button>-->
 
+<!--<button routerLink="/patient">PATIENT</button>-->
+<!--<button routerLink="/doctor">DOCTOR</button>-->
+
+<div>
+  <router-outlet></router-outlet>
+</div>
