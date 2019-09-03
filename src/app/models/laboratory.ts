@@ -1,7 +1,7 @@
 import {Role} from './role';
 import {User} from './user';
 
-export class Laboratory  extends  User {
+export class Laboratory extends User {
 
   constructor(public id?: number,
               public name?: string,
@@ -9,13 +9,13 @@ export class Laboratory  extends  User {
               public district?: string,
               public city?: string,
               public street?: string,
+              public numberOfBuild?: string,
               public username?: string,
               public password?: string,
               public phone?: string,
-              public dateOfBirth?: string,
               public role?: Role,
   ) {
-    super(id, name, username, password, role, phone, dateOfBirth, /*authorities*/);
+    super(id, name, username, password, role, phone, );
   }
 }
-              // public authorities?: []
+

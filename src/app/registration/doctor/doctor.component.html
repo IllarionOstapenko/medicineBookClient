@@ -41,7 +41,7 @@
     <input [(ngModel)]="doctor.phone" name="phone" matInput placeholder="Phone Number">
   </mat-form-field>
   <mat-form-field>
-    <input [(ngModel)]="doctor.dateOfBirth" name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <input [(ngModel)]="doctor.dateOfBirth" name="date" matInput [matDatepicker]="picker" placeholder="Date of birth">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>

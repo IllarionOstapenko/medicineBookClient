@@ -1,1 +1,40 @@
-<p>laboratory works!</p>
+<div class="example-container">
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.name" name="name" matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.region" name="region" matInput placeholder="Region">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.district" name="district" matInput placeholder="District">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.city" name="city" matInput placeholder="City">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.street" name="street" matInput placeholder="Street">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.numberOfBuild" name="numberOfBuild" matInput placeholder="Number Of Build">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.username" type="email" name="username" matInput placeholder="Email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput typeof="password" [(ngModel)]="laboratory.password" placeholder="New password" [type]="hide ? 'password'
+          : 'text'" [formControl]="passFormControl" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :
+        'visibility_off'}}</mat-icon>
+    <mat-error *ngIf="passFormControl.hasError('required')">
+      Please enter your new password
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="laboratory.phone" name="phone" matInput placeholder="Phone Number">
+  </mat-form-field>
+
+  <mat-button-toggle (click)="registerLaboratory()">Register</mat-button-toggle>
+</div>
+
+
+<button (click)="getAllLaboratories()">Get All Laboratories</button>

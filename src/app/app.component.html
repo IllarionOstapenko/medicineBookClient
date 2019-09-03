@@ -1,48 +1,14 @@
-<app-login></app-login>
-<!--<mat-button-toggle-group name="fontStyle" aria-label="Font Style">-->
-<!--  <mat-button-toggle [disabled]="isRegistrationPatientClicked"-->
-<!--                     (click)="registrationPatient()">-->
-<!--    Пацієнт-->
-<!--  </mat-button-toggle>-->
-<!--  <mat-button-toggle (click)="registrationDoctor()">Лікар</mat-button-toggle>-->
-<!--  <mat-button-toggle (click)="registrationLaboratory()">Лабораторія</mat-button-toggle>-->
-<!--</mat-button-toggle-group>-->
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
-  <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
-  <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
-</mat-button-toggle-group>
+<div *ngIf="isTokenPresent">
+    <app-login></app-login>
+</div>
 
 <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
-  <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
-  <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
+    <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
+    <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
+    <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
 </mat-button-toggle-group>
 
-
-
-<!--some comment-->
-
-
-<!--<div *ngIf="isRegistrationPatientClicked">-->
-<!--  <app-patient></app-patient>-->
-<!--</div>-->
-<!--<div *ngIf="isRegistrationDoctorClicked">-->
-<!--  <app-doctor></app-doctor>-->
-<!--</div>-->
-
-<!--<div *ngIf="isRegistrationLaboratoryClicked">-->
-<!--  <app-laboratory></app-laboratory>-->
-<!--</div>-->
-
-<!--<button (click)="showPatients()">show patients</button>-->
-<!--<button (click)="getAllPatients()">Get All Patients</button>-->
-<!--<app-registration></app-registration>-->
-<!--<button (click)="getAllDoctors()">Get All Doctors</button>-->
-
-<!--<button routerLink="/patient">PATIENT</button>-->
-<!--<button routerLink="/doctor">DOCTOR</button>-->
 
 <div>
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>
