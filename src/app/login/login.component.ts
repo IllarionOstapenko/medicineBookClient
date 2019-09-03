@@ -5,6 +5,7 @@ import {LoginService} from '../services/login.service';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Login} from '../models/login';
+import {error} from 'util';
 
 @Component({
     selector: 'app-login',
@@ -13,9 +14,9 @@ import {Login} from '../models/login';
 })
 export class LoginComponent implements OnInit {
 
-    // user: User = new User();
     hide = true;
     userLog: Login = new Login();
+    userLogin = false;
 
     constructor(private loginService: LoginService) {
     }
@@ -29,6 +30,9 @@ export class LoginComponent implements OnInit {
 
     loginUser() {
         this.loginService.loginUser(this.userLog);
+        if (status === '200') {
+            this.userLogin = true;
+        }
     }
 }
 

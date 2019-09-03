@@ -91,7 +91,7 @@ export class PatientComponent implements OnInit {
             console.log(error);
         });
         // this is login after you create user
-        this.loginService.loginUser(this.patient);
+        // this.loginService.loginUser(this.patient);
         console.log(this.patient);
     }
 

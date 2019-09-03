@@ -58,7 +58,7 @@ export class DoctorComponent implements OnInit {
             console.log(value);
         });
         // this is login after you create user
-        this.loginService.loginUser(this.doctor);
+        // this.loginService.loginUser(this.doctor);
         console.log(this.doctor);
     }
 

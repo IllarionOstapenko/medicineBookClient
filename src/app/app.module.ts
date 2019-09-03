@@ -23,12 +23,15 @@ import {Router, RouterModule, Routes} from '@angular/router';
 import {PatientComponent} from './registration/patient/patient.component';
 import {LaboratoryComponent} from './registration/laboratory/laboratory.component';
 import {DoctorComponent} from './registration/doctor/doctor.component';
+import {TestGuard} from './test.guard';
+import { HeadComponent } from './patient-page/head/head.component';
 
 
 const routs: Routes = [
-    {path: 'patient', component: PatientComponent},
+    {path: 'patient', canActivate: [TestGuard], component: PatientComponent},
     {path: 'doctor', component: DoctorComponent},
     {path: 'laboratory', component: LaboratoryComponent},
+    {path: 'patient/head', component: HeadComponent},
 ];
 
 
@@ -39,6 +42,7 @@ const routs: Routes = [
         DoctorComponent,
         PatientComponent,
         LaboratoryComponent,
+        HeadComponent,
     ],
     imports: [
         BrowserModule,

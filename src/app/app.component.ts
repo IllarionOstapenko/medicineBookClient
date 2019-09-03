@@ -9,13 +9,13 @@ import {User} from 'firebase';
 })
 export class AppComponent implements OnInit {
 
-  isTokenPresent: any;
+    isTokenPresent: any;
+
     constructor() {
     }
 
     ngOnInit(): void {
-      this.isTokenPresent = localStorage.getItem('token');
+        this.isTokenPresent = localStorage.getItem('token');
     }
-
 
 }

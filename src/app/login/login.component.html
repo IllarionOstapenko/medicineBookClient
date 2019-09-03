@@ -15,7 +15,7 @@
         Please enter your password
       </mat-error>
     </mat-form-field>
-    <mat-button-toggle [disabled]="loginForm.invalid" (click)="loginUser()">Login</mat-button-toggle>
+    <mat-button-toggle *ngIf="!userLogin" routerLink="patient/head" [disabled]="loginForm.invalid" (click)="loginUser()" >Login</mat-button-toggle>
   </div>
 </form>
 

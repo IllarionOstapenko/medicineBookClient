@@ -1,8 +1,8 @@
-<div *ngIf="isTokenPresent">
+<div *ngIf="!isTokenPresent">
     <app-login></app-login>
 </div>
 
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="!isTokenPresent">
     <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
     <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
     <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>
