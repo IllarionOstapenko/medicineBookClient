@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from 'firebase';
 
 
 @Component({
@@ -7,15 +6,5 @@ import {User} from 'firebase';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-
-    isTokenPresent: any;
-
-    constructor() {
-    }
-
-    ngOnInit(): void {
-        this.isTokenPresent = localStorage.getItem('token');
-    }
-
+export class AppComponent {
 }

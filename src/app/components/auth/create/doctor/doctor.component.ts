@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {ImageService} from '../../services/image.service';
+import {ImageService} from '../../../../services/image.service';
 import {FormControl, Validators} from '@angular/forms';
 import * as uuid from 'uuid';
-import {Doctor} from '../../models/doctor';
-import {Role} from '../../models/role';
-import {DoctorService} from '../../services/doctor.service';
-import {LoginService} from '../../services/login.service';
+import {Doctor} from '../../../../models/doctor';
+import {Role} from '../../../../models/role';
+import {DoctorService} from '../../../../services/doctor.service';
+import {LoginService} from '../../../../services/login.service';
 
 
 @Component({

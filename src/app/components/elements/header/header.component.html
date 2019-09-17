@@ -1,0 +1,24 @@
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="patient" ngForm>
+    <mat-button-toggle value="" (click)="myPage()">Моя Сторінка</mat-button-toggle>
+    <mat-button-toggle value="" (click)="goToDoctor()">Записатися до лікаря</mat-button-toggle>
+    <mat-button-toggle value="" (click)="historyAnalyzes()">Історія Аналізів</mat-button-toggle>
+    <mat-button-toggle value="" (click)="historyInDoctor()">Історія походів до лікаря</mat-button-toggle>
+    <mat-button-toggle value="" (click)="logOut()">Вихід</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="doctor" ngForm>
+    <mat-button-toggle value="" (click)="receptionPatient()">Прийом пацієнта</mat-button-toggle>
+    <!--    <mat-button-toggle value="" routerLink="/head/patient/mypage">Моя Сторінка</mat-button-toggle>-->
+    <mat-button-toggle value="" (click)="workingCalendar()">Робочий календар</mat-button-toggle>
+    <mat-button-toggle value="" (click)="historyReception()">Історія Прийомів</mat-button-toggle>
+    <mat-button-toggle value="" (click)="logOut()">Вихід</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="labolatory" ngForm>
+    <mat-button-toggle value="">Моя Сторінка</mat-button-toggle>
+    <!--    <mat-button-toggle value="" routerLink="/head/patient/mypage">Моя Сторінка</mat-button-toggle>-->
+    <mat-button-toggle value="" >Записатися до лікаря</mat-button-toggle>
+    <mat-button-toggle value="">Історія Аналізів</mat-button-toggle>
+    <mat-button-toggle value="">Історія походів до лікаря</mat-button-toggle>
+    <mat-button-toggle value="" (click)="logOut()">Вихід</mat-button-toggle>
+</mat-button-toggle-group>

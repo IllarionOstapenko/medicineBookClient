@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {ImageService} from '../../services/image.service';
+import {ImageService} from '../../../../services/image.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import * as uuid from 'uuid';
-import {Patient} from '../../models/patient';
-import {Role} from '../../models/role';
-import {PatientService} from '../../services/patient.service';
+import {Patient} from '../../../../models/patient';
+import {Role} from '../../../../models/role';
+import {PatientService} from '../../../../services/patient.service';
 
 import {ErrorStateMatcher} from '@angular/material';
 import {FormBuilder, FormGroupDirective, NgForm} from '@angular/forms';
-import {LoginService} from '../../services/login.service';
+import {LoginService} from '../../../../services/login.service';
+import {User} from '../../../../models/user';
 
 
 /** Error when the parent is invalid */
@@ -40,6 +41,7 @@ export class PatientComponent implements OnInit {
     patient: Patient = new Patient();
     selectedFile: File = null;
     namePhoto: any;
+    currentUser: object;
     // passFormControl = new FormControl('', [
     //   Validators.required,
     // ]);
@@ -69,6 +71,35 @@ export class PatientComponent implements OnInit {
 
     ngOnInit() {
     }
+
+
+    // registerPatient() {
+    //     console.log(this.patient);
+    //     console.log(this.namePhoto = this.selectedFile.name);
+    //     this.namePhoto = this.selectedFile.name;
+    //     if (true) {
+    //         console.log(22);
+    //         // const strings = this.selectedFile.name.split('.');
+    //         // const format = strings.pop();
+    //         this.patient.image = /*'book-ang/src/assets/img' +*/ this.namePhoto/* + '.' + format*/;
+    //         this.imageService.uploadImage(this.selectedFile, this.patient.image).subscribe(value => {
+    //             console.log(value);
+    //         });
+    //     }
+    //     this.patient.role = Role.ROLE_PATIENT;
+    //     this.patientService.createPatient(this.patient).subscribe(value => {
+    //         console.log(value);
+    //     }, error => {
+    //         if (error.status === 500) {
+    //             console.log('errror');
+    //         }
+    //         console.log(error);
+    //     });
+    //     // this is login after you create user
+    //     // this.loginService.loginUser(this.patient);
+    //     console.log(this.patient);
+    // }
+
 
     registerPatient() {
         console.log(this.patient);
@@ -111,3 +142,6 @@ export class PatientComponent implements OnInit {
         });
     }
 }
+
+
+

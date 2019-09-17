@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {User} from '../models/user';
-import {LoginService} from '../services/login.service';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Login} from '../models/login';
-import {error} from 'util';
+import {User} from '../../../models/user';
+import {LoginService} from '../../../services/login.service';
+import {Login} from '../../../models/login';
+import {Router} from '@angular/router';
+import {Patient} from '../../../models/patient';
 
 @Component({
     selector: 'app-login',
@@ -16,7 +15,8 @@ export class LoginComponent implements OnInit {
 
     hide = true;
     userLog: Login = new Login();
-    userLogin = false;
+    user: User;
+    patient: Patient;
 
     constructor(private loginService: LoginService) {
     }
@@ -29,11 +29,10 @@ export class LoginComponent implements OnInit {
     }
 
     loginUser() {
-        this.loginService.loginUser(this.userLog);
-        if (status === '200') {
-            this.userLogin = true;
-        }
+        this.loginService.loginUser(this.userLog).subscribe(token => {
+            localStorage.setItem('token', token.headers.get('Authorization'));
+            this.loginService.addPageIndexParams('head', 'true');
+        });
     }
+
 }
-
-

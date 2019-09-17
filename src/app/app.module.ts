@@ -9,45 +9,30 @@ import {
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatNativeDateModule,
+    MatSelectModule,
+    MatToolbarModule
 } from '@angular/material/';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LoginComponent} from './login/login.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/';
 import {MatRadioModule} from '@angular/material/radio';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {Router, RouterModule, Routes} from '@angular/router';
-// import { DoctorComponent } from './registration/doctor/doctor.component';
-import {PatientComponent} from './registration/patient/patient.component';
-import {LaboratoryComponent} from './registration/laboratory/laboratory.component';
-import {DoctorComponent} from './registration/doctor/doctor.component';
-import {TestGuard} from './test.guard';
-import { HeadComponent } from './patient-page/head/head.component';
-
-
-const routs: Routes = [
-    {path: 'patient', canActivate: [TestGuard], component: PatientComponent},
-    {path: 'doctor', component: DoctorComponent},
-    {path: 'laboratory', component: LaboratoryComponent},
-    {path: 'patient/head', component: HeadComponent},
-];
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {ElementsModule} from './modules/elements.module';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        LoginComponent,
-        DoctorComponent,
-        PatientComponent,
-        LaboratoryComponent,
-        HeadComponent,
+
     ],
     imports: [
+        AppRoutingModule,
+        ElementsModule,
         BrowserModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(routs),
         MatButtonModule,
         FormsModule,
         ReactiveFormsModule,
@@ -61,6 +46,7 @@ const routs: Routes = [
         HttpClientModule,
         RouterModule,
         MatIconModule,
+        MatToolbarModule,
 
     ],
     providers: [],

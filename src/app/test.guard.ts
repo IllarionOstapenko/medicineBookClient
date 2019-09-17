@@ -12,6 +12,7 @@ export class TestGuard implements CanActivate {
         if (localStorage.getItem('token') != null) {
             return true;
         }
+        return false;
     }
 
 }

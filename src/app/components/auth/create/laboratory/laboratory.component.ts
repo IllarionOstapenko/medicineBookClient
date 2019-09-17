@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Role} from '../../models/role';
-import {Laboratory} from '../../models/laboratory';
+import {Role} from '../../../../models/role';
+import {Laboratory} from '../../../../models/laboratory';
 import {FormControl, Validators} from '@angular/forms';
-import {LaboratoryService} from '../../services/laboratory.service';
-import {LoginService} from '../../services/login.service';
+import {LaboratoryService} from '../../../../services/laboratory.service';
+import {LoginService} from '../../../../services/login.service';
 
 @Component({
   selector: 'app-laboratory',
