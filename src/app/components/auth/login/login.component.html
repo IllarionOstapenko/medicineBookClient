@@ -1,12 +1,12 @@
 <form #loginForm='ngForm'>
-    <div>
-        <mat-form-field>
+    <div class="wrapper">
+        <mat-form-field class="email">
             <input [(ngModel)]="userLog.username" type="email" name="username" matInput placeholder="Email" required>
             <mat-error *ngIf="passFormControl.hasError('required')">
                 Please enter your email
             </mat-error>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="password">
             <input matInput [(ngModel)]="userLog.password" placeholder="Password" [type]="hide ? 'password'
             : 'text'" [formControl]="passFormControl" required>
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :
@@ -17,13 +17,14 @@
         </mat-form-field>
         <mat-button-toggle [disabled]="loginForm.invalid"
                            (click)="loginUser()"
+                           class="login"
         >Login
 
         </mat-button-toggle>
     </div>
 
 </form>
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="register">
     <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>
     <mat-button-toggle routerLink="doctor">Лікар</mat-button-toggle>
     <mat-button-toggle routerLink="laboratory">Лабораторія</mat-button-toggle>

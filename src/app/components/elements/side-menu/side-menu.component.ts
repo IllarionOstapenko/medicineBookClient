@@ -10,14 +10,22 @@ import {Patient} from '../../../models/patient';
 })
 export class SideMenuComponent implements OnInit {
 
-    @Input() patient;
+    patient;
 
     constructor(private loginService: LoginService,
                 private router: Router) {
     }
 
     ngOnInit() {
-        console.log(this.loginService.getLocalUser());
+        // console.log(this.loginService.userDataSource.getValue());
+        // console.log('side-menu');
+        // this.patient = this.loginService.userDataSource.getValue();
+        setTimeout(() => {
+            this.loginService.getCurrentUser().subscribe(value => {
+                this.patient = value;
+            });
+        }, 10);
+
         // this.loginService.auth().subscribe(value => {
         //     this.user = value;
         //     // console.log(this.user);

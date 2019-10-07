@@ -1,0 +1,15 @@
+.example-card {
+    /*max-width: 600px;*/
+    max-width: 260px;
+
+}
+
+.image {
+    margin-left: 10px;
+}
+.size {
+
+    width: 240px;
+    height: 240px;
+    border-radius: 45px;
+}

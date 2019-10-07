@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
 
     loginUser() {
         this.loginService.loginUser(this.userLog).subscribe(token => {
+            // localStorage.setItem('user', token.headers.get('Test'));
             localStorage.setItem('token', token.headers.get('Authorization'));
             this.loginService.addPageIndexParams('head', 'true');
         });
     }
-
 }

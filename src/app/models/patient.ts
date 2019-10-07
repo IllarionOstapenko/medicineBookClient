@@ -1,6 +1,6 @@
 import {User} from './user';
-import {Gender} from './gender';
-import {Role} from './role';
+import {Gender} from '../enums/gender';
+import {Role} from '../enums/role';
 
 export class Patient extends User {
 

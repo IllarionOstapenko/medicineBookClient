@@ -5,7 +5,6 @@ import {MaterialModule} from '../material.module';
 import {HeadPageComponent} from '../components/head-page/head-page.component';
 import {ElementsModule} from './elements.module';
 import {PatientModule} from './patient.module';
-import {TestGuard} from '../test.guard';
 
 const routs: Routes = [{
     path: '', component: HeadPageComponent, children: [
@@ -16,8 +15,7 @@ const routs: Routes = [{
 }];
 
 @NgModule({
-    declarations: [
-        HeadPageComponent],
+    declarations: [HeadPageComponent],
     imports: [
         CommonModule,
         MaterialModule,

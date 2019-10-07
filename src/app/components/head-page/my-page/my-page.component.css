@@ -1,9 +1,6 @@
-.example-card {
-    max-width: 400px;
+.size {
+    width: 240px;
+    height: 240px;
+    border-radius: 45px;
 }
 
-.example-header-image {
-    /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
-    /*background-image: url('http://localhost:8080/image/AAAtesla.jpg');*/
-    background-size: cover;
-}

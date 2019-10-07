@@ -3,9 +3,10 @@ import {ImageService} from '../../../../services/image.service';
 import {FormControl, Validators} from '@angular/forms';
 import * as uuid from 'uuid';
 import {Doctor} from '../../../../models/doctor';
-import {Role} from '../../../../models/role';
+import {Role} from '../../../../enums/role';
 import {DoctorService} from '../../../../services/doctor.service';
 import {LoginService} from '../../../../services/login.service';
+import {Speciality} from '../../../../enums/speciality';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class DoctorComponent implements OnInit {
 
     doctor: Doctor = new Doctor();
     selectedFile: File = null;
-
+    iconPath: 'assets/img/female-doctor.jpg';
     namePhoto: any;
     passFormControl = new FormControl('', [
         Validators.required,
@@ -34,20 +35,22 @@ export class DoctorComponent implements OnInit {
 
     hide = true;
 
+    specialities = Object.values(Speciality).map(key => Speciality[key]).filter(value => typeof value === 'string') as unknown as string;
 
     ngOnInit() {
     }
+
 
     registerDoctor() {
         console.log(this.doctor);
         this.namePhoto = uuid();
         if (this.selectedFile != null) {
-            const strings = this.selectedFile.name.split('.');
-            console.log(strings);
+            const format = this.selectedFile.name.split('.').pop();
+            console.log(format);
             if (this.doctor.image !== this.doctor.image) {
                 this.namePhoto = uuid();
             }
-            this.doctor.image = /*'book-ang/src/assets/img' +*/ this.namePhoto + '.' + strings[1];
+            this.doctor.image = this.namePhoto + '.' + format;
 
             this.imageService.uploadImage(this.selectedFile, this.doctor.image).subscribe(value => {
                 console.log(value);

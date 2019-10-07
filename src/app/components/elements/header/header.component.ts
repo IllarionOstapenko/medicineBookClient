@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
             this.user = value;
             // @ts-ignore
             if (this.user.role === 'ROLE_PATIENT') {
+                // @ts-ignore
                 this.patient = value;
                 // @ts-ignore
             } else if (this.user.role === 'ROLE_DOCTOR') {
@@ -47,7 +48,7 @@ export class HeaderComponent implements OnInit {
     }
 
     myPage() {
-        this.router.navigate(['/head/patient/mypage']);
+        this.router.navigate(['/head/patient/myPage']);
         this.page = false;
     }
 

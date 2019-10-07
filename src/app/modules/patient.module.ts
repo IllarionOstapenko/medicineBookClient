@@ -6,19 +6,19 @@ import {MyPageComponent} from '../components/head-page/my-page/my-page.component
 import {ElementsModule} from './elements.module';
 import {ToDoctorComponent} from '../components/head-page/to-doctor/to-doctor.component';
 import {HistoryAnalyzesComponent} from '../components/head-page/history-analyzes/history-analyzes.component';
-import { HistoryInDoctorComponent } from '../components/head-page/history-in-doctor/history-in-doctor.component';
+import {HistoryInDoctorComponent} from '../components/head-page/history-in-doctor/history-in-doctor.component';
+import {ListSpecialityComponent} from '../components/head-page/to-doctor/list-speciality/list-speciality.component';
+import {DoctorComponent} from '../components/head-page/to-doctor/list-speciality/doctor/doctor.component';
 
 const routs: Routes = [
+    {path: 'myPage', component: MyPageComponent},
     {
-        path: 'mypage', component: MyPageComponent
-        // path: '', component: FirsPageComponent, children:
-        // [
-        //     {path: 'my-page', component: MyPageComponent}
-        // ]
+        path: 'goToDoctor', component: ToDoctorComponent, children: [
+            {path: 'doctors/:speciality', component: DoctorComponent}
+        ]
     },
-    {path: 'goToDoctor', component: ToDoctorComponent},
     {path: 'historyAnalyzes', component: HistoryAnalyzesComponent},
-    {path: 'historyInDoctor', component: HistoryInDoctorComponent}
+    {path: 'historyInDoctor', component: HistoryInDoctorComponent},
 ];
 
 @NgModule({
@@ -27,6 +27,8 @@ const routs: Routes = [
         ToDoctorComponent,
         HistoryAnalyzesComponent,
         HistoryInDoctorComponent,
+        ListSpecialityComponent,
+        DoctorComponent,
     ],
     imports: [
         CommonModule,

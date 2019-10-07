@@ -1,13 +1,20 @@
-/*.example-container {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*}*/
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+.email {
+    max-width: 300px;
 
-/*.example-container > * {*/
-/*  width: 30%;*/
-/*}*/
+}
+.password {
+    max-width: 300px;
+}
+.login {
+    max-width: 150px;
+}
 
-/*.btn {*/
-/*  background-color: aqua;*/
-
-/*}*/
+.register {
+    margin-top: 50px;
+    margin-left: 350px;
+}

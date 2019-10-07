@@ -1,2 +1,14 @@
-<p>side-menu works!</p>
+<mat-card class="example-card" *ngIf="patient">
+    <div class="image">
+        <img class="size" [src]="'http://localhost:8080/images/'+ patient.image">
+    </div>
+    <hr>
+    <mat-card-title>{{patient.name}} {{patient.surname}} {{patient.fatherName}}</mat-card-title>
+    <mat-card-content> Номер мобільного: {{patient.phone}}</mat-card-content>
+    <mat-card-content>E-mail: {{patient.username}}</mat-card-content>
+    <mat-card-content> Дата народження: {{patient.dateOfBirth | date}}</mat-card-content>
+    <mat-card-content>Стать: {{patient.gender}}</mat-card-content>
+</mat-card>
+
+
 

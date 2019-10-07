@@ -3,7 +3,7 @@ import {ImageService} from '../../../../services/image.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import * as uuid from 'uuid';
 import {Patient} from '../../../../models/patient';
-import {Role} from '../../../../models/role';
+import {Role} from '../../../../enums/role';
 import {PatientService} from '../../../../services/patient.service';
 
 import {ErrorStateMatcher} from '@angular/material';
@@ -105,9 +105,8 @@ export class PatientComponent implements OnInit {
         console.log(this.patient);
         this.namePhoto = uuid();
         if (this.selectedFile != null) {
-            const strings = this.selectedFile.name.split('.');
-            const format = strings.pop();
-            this.patient.image = /*'book-ang/src/assets/img' +*/ this.namePhoto + '.' + format;
+            const format = this.selectedFile.name.split('.').pop();
+            this.patient.image = this.namePhoto + '.' + format;
             this.imageService.uploadImage(this.selectedFile, this.patient.image).subscribe(value => {
                 console.log(value);
             });
@@ -119,10 +118,8 @@ export class PatientComponent implements OnInit {
             if (error.status === 500) {
                 console.log('errror');
             }
-            console.log(error);
+            // console.log(error);
         });
-        // this is login after you create user
-        // this.loginService.loginUser(this.patient);
         console.log(this.patient);
     }
 

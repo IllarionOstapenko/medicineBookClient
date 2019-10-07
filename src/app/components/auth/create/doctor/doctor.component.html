@@ -1,58 +1,78 @@
-<div class="example-container">
-  <mat-form-field>
-    <input [(ngModel)]="doctor.name" name="name" matInput placeholder="Name">
-  </mat-form-field>
-  <mat-form-field>
-    <input [(ngModel)]="doctor.surname" name="surname" matInput placeholder="Surname">
-  </mat-form-field>
-  <mat-form-field>
-    <input [(ngModel)]="doctor.fatherName" name="surname" matInput placeholder="Father Name">
-  </mat-form-field>
-  <mat-form-field>
-    <input [(ngModel)]="doctor.speciality" name="speciality" matInput placeholder="Speciality">
-  </mat-form-field>
-  <mat-form-field>
-    <input [(ngModel)]="doctor.username" type="email" name="username" matInput placeholder="Email">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput typeof="password" [(ngModel)]="doctor.password" placeholder="New password" [type]="hide ? 'password'
+<div class="start">
+    <div class="first">
+        <mat-form-field>
+            <input [(ngModel)]="doctor.name" name="name" matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input [(ngModel)]="doctor.surname" name="surname" matInput placeholder="Surname">
+        </mat-form-field>
+    </div>
+    <div class="second">
+        <mat-form-field>
+            <input [(ngModel)]="doctor.fatherName" name="surname" matInput placeholder="Father Name">
+        </mat-form-field>
+        <!--        <mat-form-field>-->
+        <!--            <input [(ngModel)]="doctor.speciality" name="speciality" matInput placeholder="Speciality">-->
+        <!--        </mat-form-field>-->
+        <mat-form-field >
+            <mat-label>Speciality</mat-label>
+            <mat-select [(ngModel)]="doctor.speciality">
+                <mat-option *ngFor="let speciality of specialities" [value]="speciality" >
+                    {{speciality}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="second-start">
+        <div class="third">
+            <mat-form-field>
+                <input [(ngModel)]="doctor.username" type="email" name="username" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput typeof="password" [(ngModel)]="doctor.password" placeholder="New password" [type]="hide ? 'password'
           : 'text'" [formControl]="passFormControl" required>
-    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :
-        'visibility_off'}}</mat-icon>
-    <mat-error *ngIf="passFormControl.hasError('required')">
-      Please enter your new password
-    </mat-error>
-  </mat-form-field>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :
+                    'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="passFormControl.hasError('required')">
+                    Please enter your new password
+                </mat-error>
+            </mat-form-field>
+        </div>
 
+        <!--  <mat-form-field>-->
+        <!--    <input matInput [(ngModel)]="user.password" placeholder="Confirm password" [type]="hide ?-->
+        <!--                'password' : 'text'" [formControl]="confirmFormControl"-->
+        <!--           required>-->
+        <!--&lt;!&ndash;    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :&ndash;&gt;-->
+        <!--&lt;!&ndash;        'visibility_off'}}</mat-icon>&ndash;&gt;-->
+        <!--    <mat-error *ngIf="confirmFormControl.hasError('required')">-->
+        <!--      Confirm your password-->
+        <!--    </mat-error>-->
+        <!--  </mat-form-field>-->
 
-  <!--  <mat-form-field>-->
-  <!--    <input matInput [(ngModel)]="user.password" placeholder="Confirm password" [type]="hide ?-->
-  <!--                'password' : 'text'" [formControl]="confirmFormControl"-->
-  <!--           required>-->
-  <!--&lt;!&ndash;    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' :&ndash;&gt;-->
-  <!--&lt;!&ndash;        'visibility_off'}}</mat-icon>&ndash;&gt;-->
-  <!--    <mat-error *ngIf="confirmFormControl.hasError('required')">-->
-  <!--      Confirm your password-->
-  <!--    </mat-error>-->
-  <!--  </mat-form-field>-->
-
-
-  <mat-form-field>
-    <input [(ngModel)]="doctor.phone" name="phone" matInput placeholder="Phone Number">
-  </mat-form-field>
-  <mat-form-field>
-    <input [(ngModel)]="doctor.dateOfBirth" name="date" matInput [matDatepicker]="picker" placeholder="Date of birth">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <h1>Upload Image</h1>
-  <input type="file" (change)="onFileSelected($event)">
-
-  <mat-radio-group aria-label="Select sex" [(ngModel)]="doctor.gender" name="gender">
-    <mat-radio-button name="gender" value="MALE">Male</mat-radio-button>
-    <mat-radio-button name="gender" value="FEMALE">Female</mat-radio-button>
-  </mat-radio-group>
-  <mat-button-toggle (click)="registerDoctor()">Register</mat-button-toggle>
+        <div class="fourth">
+            <mat-form-field>
+                <input [(ngModel)]="doctor.phone" name="phone" matInput placeholder="Phone Number">
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="doctor.dateOfBirth" name="date" matInput [matDatepicker]="picker"
+                       placeholder="Date of birth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="fifth">
+        <h1>Upload Image</h1>
+        <input type="file" (change)="onFileSelected($event)">
+    </div>
+    <div class="sixth">
+        <mat-radio-group aria-label="Select sex" [(ngModel)]="doctor.gender" name="gender">
+            <mat-radio-button name="gender" value="MALE">Male</mat-radio-button>
+            <mat-radio-button name="gender" value="FEMALE">Female</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <mat-button-toggle (click)="registerDoctor()">Register</mat-button-toggle>
 
 </div>
 

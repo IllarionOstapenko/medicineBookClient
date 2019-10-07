@@ -1,6 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {HeadPageComponent} from '../head-page.component';
 import {Patient} from '../../../models/patient';
+import {ActivatedRoute} from '@angular/router';
+import {LoginService} from '../../../services/login.service';
+import {take} from 'rxjs/operators';
+
 
 @Component({
     selector: 'app-my-page',
@@ -8,15 +12,18 @@ import {Patient} from '../../../models/patient';
     styleUrls: ['./my-page.component.css']
 })
 export class MyPageComponent implements OnInit {
-    patient: Patient;
+    patient: any;
 
-
-    constructor(private firsPage: HeadPageComponent) {
+    constructor(private activatedRoute: ActivatedRoute,
+                private loginService: LoginService) {
     }
 
     ngOnInit() {
-        this.patient = this.firsPage.patient;
-
+        setTimeout(() => {
+            this.loginService.getCurrentUser().subscribe(value => {
+                this.patient = value;
+            });
+        }, 10);
     }
 
 

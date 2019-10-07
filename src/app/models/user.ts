@@ -1,5 +1,5 @@
-import {Gender} from './gender';
-import {Role} from './role';
+import {Gender} from '../enums/gender';
+import {Role} from '../enums/role';
 
 
 export class User {
@@ -11,7 +11,6 @@ export class User {
               public role?: Role,
               public phone?: string,
               public dateOfBirth?: string,
-              // public authorities?: []
   ) {
   }
 

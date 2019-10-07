@@ -5,6 +5,7 @@ import {HeaderComponent} from '../components/elements/header/header.component';
 import {FooterComponent} from '../components/elements/footer/footer.component';
 import {MatButtonToggleModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MaterialModule} from '../material.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {RouterModule} from '@angular/router';
     imports: [
         CommonModule,
         MatButtonToggleModule,
+        MaterialModule
     ],
     exports: [
         SideMenuComponent,

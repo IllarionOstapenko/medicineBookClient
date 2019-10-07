@@ -21,32 +21,33 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {ElementsModule} from './modules/elements.module';
 import {AppRoutingModule} from './app-routing.module';
+import {MaterialModule} from './material.module';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-
     ],
     imports: [
         AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
         ElementsModule,
         BrowserModule,
+        MaterialModule,
         BrowserAnimationsModule,
-        MatButtonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatButtonToggleModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatRadioModule,
-        HttpClientModule,
-        RouterModule,
-        MatIconModule,
-        MatToolbarModule,
+        // RouterModule,
+        // MatButtonModule,
+        // ReactiveFormsModule,
+        // MatFormFieldModule,
+        // MatInputModule,
+        // MatSelectModule,
+        // MatButtonToggleModule,
+        // MatDatepickerModule,
+        // MatNativeDateModule,
+        // MatRadioModule,
+        // MatIconModule,
+        // MatToolbarModule,
 
     ],
     providers: [],

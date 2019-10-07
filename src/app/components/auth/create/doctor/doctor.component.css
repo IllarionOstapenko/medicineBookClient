@@ -1,4 +1,39 @@
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
-}
+/*.start {*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*}*/
+/*.first {*/
+/*  !*display: flex;*!*/
+/*  !*flex-direction: column;*!*/
+/*  max-width: 250px;*/
+/*  margin-left: 150px;*/
 
+/*}*/
+/*.second {*/
+/*  !*display: flex;*!*/
+/*  !*flex-direction: column;*!*/
+/*  max-width: 250px;*/
+
+/*}*/
+
+
+/*.third {*/
+/*  !*flex-direction: row;*!*/
+/*  max-width: 250px;*/
+/*}*/
+/*.fourth {*/
+/*  !*flex-direction: row;*!*/
+/*  max-width: 250px;*/
+/*}*/
+/*.second-start {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+/*.fifth {*/
+/*  !*flex-direction: row;*!*/
+/*  max-width: 250px;*/
+/*}*/
+/*.sixth {*/
+/*  !*flex-direction: row;*!*/
+/*  max-width: 250px;*/
+/*}*/
