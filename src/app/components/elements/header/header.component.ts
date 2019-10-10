@@ -52,16 +52,24 @@ export class HeaderComponent implements OnInit {
         this.page = false;
     }
 
-    goToDoctor() {
-        this.router.navigate(['/head/patient/goToDoctor']);
+    recordToDoctor() {
+        this.router.navigate(['/head/patient/record-to-doctor']);
     }
 
     historyAnalyzes() {
         this.router.navigate(['head/patient/historyAnalyzes']);
     }
 
-    historyInDoctor() {
-        this.router.navigate(['head/patient/historyInDoctor']);
+    visitInDoctor() {
+        this.router.navigate(['head/patient/visit-in-doctor']);
+    }
+
+    historyVisitsInDoctor() {
+        this.router.navigate(['head/patient/visit-in-doctor/history-visits']);
+    }
+
+    futureVisitInDoctor() {
+        this.router.navigate(['head/patient/visit-in-doctor/future-visits']);
     }
 
     receptionPatient() {
@@ -75,4 +83,6 @@ export class HeaderComponent implements OnInit {
     historyReception() {
         this.router.navigate(['head/doctor/historyReception']);
     }
+
+
 }

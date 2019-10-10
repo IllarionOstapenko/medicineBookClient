@@ -1,0 +1,15 @@
+<div class="body">
+    <!--<p>list-speciality works!</p>-->
+    <div class="speciality">
+        <div *ngFor="let speciality of specialities">
+            <button mat-button
+                    routerLink="doctors/{{speciality}}"
+            >{{speciality}}
+            </button>
+        </div>
+    </div>
+    <!--                    (click)="getDoctorsBySpeciality(speciality)"-->
+    <router-outlet></router-outlet>
+</div>
+
+

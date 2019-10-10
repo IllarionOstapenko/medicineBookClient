@@ -15,14 +15,13 @@
                 Please enter your password
             </mat-error>
         </mat-form-field>
-        <mat-button-toggle [disabled]="loginForm.invalid"
+        <mat-button-toggle [disabled]="!userLog.username || !userLog.password"
                            (click)="loginUser()"
                            class="login"
         >Login
 
         </mat-button-toggle>
     </div>
-
 </form>
 <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="register">
     <mat-button-toggle routerLink="patient">Пацієнт</mat-button-toggle>

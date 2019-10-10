@@ -10,7 +10,7 @@ import {Speciality} from '../../../../enums/speciality';
 
 
 @Component({
-    selector: 'app-doctor',
+    selector: 'app-doctors',
     templateUrl: './doctor.component.html',
     styleUrls: ['./doctor.component.css']
 })

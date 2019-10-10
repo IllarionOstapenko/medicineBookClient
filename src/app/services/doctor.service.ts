@@ -29,16 +29,16 @@ export class DoctorService {
     // }
 
 
-    createDoctor(doctor: Doctor): Observable<any> {
-        return this.http.post(this.createDoctorURL, doctor);
+    createDoctor(doctor: Doctor): Observable<Doctor> {
+        return this.http.post<Doctor>(this.createDoctorURL, doctor);
     }
 
 
-    getDoctorsInfo(): Observable<any> {
+    getDoctorsInfo(): Observable<Doctor> {
         const headers = new HttpHeaders()
             .set('Authorization', localStorage.getItem('token'));
         console.log('headers' + headers);
-        return this.http.get<any>(this.DoctorInfoURL, {headers});
+        return this.http.get<Doctor>(this.DoctorInfoURL, {headers});
     }
 
     getAllSpecialities(): Observable<string> {

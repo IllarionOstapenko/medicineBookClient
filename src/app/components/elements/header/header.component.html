@@ -1,8 +1,13 @@
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="patient" ngForm class="test">
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf="patient" ngForm class="doctors">
     <mat-button-toggle value="" (click)="myPage()" checked>Моя Сторінка</mat-button-toggle>
-    <mat-button-toggle value="" (click)="goToDoctor()">Записатися до лікаря</mat-button-toggle>
+    <mat-button-toggle value="" (click)="recordToDoctor()">Записатися до лікаря</mat-button-toggle>
     <mat-button-toggle value="" (click)="historyAnalyzes()">Історія Аналізів</mat-button-toggle>
-    <mat-button-toggle value="" (click)="historyInDoctor()">Історія походів до лікаря</mat-button-toggle>
+<!--    <mat-button-toggle value="" (click)="visitInDoctor()">Походів до лікаря</mat-button-toggle>-->
+    <mat-button-toggle mat-button [matMenuTriggerFor]="menu" (click)="visitInDoctor()">Походи до лікаря</mat-button-toggle>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="historyVisitsInDoctor()">Історія візитів</button>
+        <button mat-menu-item (click)="futureVisitInDoctor()">Майбутні візити</button>
+    </mat-menu>
     <mat-button-toggle value="" (click)="logOut()">Вихід</mat-button-toggle>
 </mat-button-toggle-group>
 

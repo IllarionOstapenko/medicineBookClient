@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+}

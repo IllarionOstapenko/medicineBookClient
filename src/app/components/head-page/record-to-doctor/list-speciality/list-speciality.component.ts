@@ -33,12 +33,9 @@ export class ListSpecialityComponent implements OnInit {
 
 
     ngOnInit() {
-        this.activatedRoute.params.subscribe((value) => {
-            console.log(value);
-        });
+        this.activatedRoute.params.subscribe();
         this.doctorService.getAllSpecialities().subscribe(value => {
             this.specialities = value;
-            console.log(value);
         });
 
     }
@@ -46,14 +43,6 @@ export class ListSpecialityComponent implements OnInit {
 
     getDoctorsBySpeciality(speciality) {
         this.doctorService.getDoctorsBySpeciality(speciality).subscribe(value => {
-            // console.log('&&&&&&&&&&&&&&&&&7');
-            // console.log(value);
-            // console.log('&&&&&&&&&&&&&&&&&7');
-            // @ts-ignore
-            // console.log('_______________________');
-            // console.log(this.doctorService.addListDoctors(value));
-            // console.log('_______________________');
-            // this.doctorService.addListDoctors(value);
             this.doctors = value;
         });
         // this.router.navigate(['specialities']);

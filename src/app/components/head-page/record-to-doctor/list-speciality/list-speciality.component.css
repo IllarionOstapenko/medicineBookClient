@@ -1,7 +1,9 @@
-.wrapper {
+.body {
     display: flex;
     flex-direction: row;
 }
-.some {
-    margin-left: 5%;
+
+.speciality {
+    display: block;
 }
+
