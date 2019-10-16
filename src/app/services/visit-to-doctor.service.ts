@@ -11,7 +11,10 @@ export class VisitToDoctorService {
     visitToDoctorURL = `${Host.API_URL}/create/visit`;
     getAllVisitsURL = `${Host.API_URL}/getAllVisits`;
     getByPatientIdURL = `${Host.API_URL}/getByPatientId`;
-    findAllByDateOfVisitURL = `${Host.API_URL}/findAllByDateOfVisit`;
+    getAllByDateOfVisitURL = `${Host.API_URL}/secondTest`;
+    getByPatientIdAndDateURL = `${Host.API_URL}/getAllByPatientIdAndDate`;
+
+    //                                       getAllByPatientIdAndDate&patient={patientId}
 
     constructor(private http: HttpClient,
                 private loginService: LoginService) {
@@ -34,6 +37,14 @@ export class VisitToDoctorService {
         return this.http.get(`${this.getByPatientIdURL}&patient=${this.loginService.userDataSource.getValue().id}`);
     }
 
+    getAllByDateOfVisitBefore() {
+        console.log(this.loginService.userDataSource.getValue().id);
+        return this.http.get(`${this.getAllByDateOfVisitURL}&patient=${this.loginService.userDataSource.getValue().id}`);
+    }
+
+    getByPatientIdAndDate() {
+        return this.http.get(`${this.getByPatientIdAndDateURL}&patient=${this.loginService.userDataSource.getValue().id}`);
+    }
 
 
 }

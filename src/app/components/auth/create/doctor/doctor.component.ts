@@ -7,6 +7,7 @@ import {Role} from '../../../../enums/role';
 import {DoctorService} from '../../../../services/doctor.service';
 import {LoginService} from '../../../../services/login.service';
 import {Speciality} from '../../../../enums/speciality';
+import * as moment from 'moment';
 
 
 @Component({
@@ -57,6 +58,7 @@ export class DoctorComponent implements OnInit {
             });
         }
         this.doctor.role = Role.ROLE_DOCTOR;
+        this.doctor.dateOfBirth = moment(this.doctor.dateOfBirth).format('YYYY-MM-DDT00:00:00.000') + 'Z';
         this.doctorService.createDoctor(this.doctor).subscribe(value => {
             console.log(value);
         });

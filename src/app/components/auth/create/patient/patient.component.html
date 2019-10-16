@@ -28,13 +28,23 @@
         <mat-form-field>
             <input [(ngModel)]="patient.phone" name="phone" matInput placeholder="Phone Number">
         </mat-form-field>
-
+        <!--        <input type="date" [(ngModel)]="patient.dateOfBirth" name="date" matInput>-->
         <mat-form-field>
             <input [(ngModel)]="patient.dateOfBirth" name="date" matInput [matDatepicker]="picker"
                    placeholder="Date of birth">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <!--        <form #form='ngForm'>-->
+        <!--            <mat-form-field>-->
+        <!--                <input matInput ngModel name="dateOfBirth" [matDatepicker]="picker"-->
+        <!--                       placeholder="Виберіть дату" required>-->
+        <!--                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+
+        <!--                <mat-datepicker touchUi #picker></mat-datepicker>-->
+
+        <!--            </mat-form-field>-->
+        <!--        </form>-->
         <h1>Upload Image</h1>
         <input type="file" (change)="onFileSelected($event)">
 

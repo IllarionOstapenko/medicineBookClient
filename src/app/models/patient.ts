@@ -17,7 +17,7 @@ export class Patient extends User {
               public role?: Role.ROLE_PATIENT,
               // public authorities?: []
   ) {
-    super(id, name, username, password, role, phone, dateOfBirth, /*authorities*/);
+    super(/*id, name, username, password, role, phone, dateOfBirth,*/ /*authorities*/);
   }
 }
 

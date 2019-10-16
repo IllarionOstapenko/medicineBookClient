@@ -19,7 +19,8 @@
         <form #form='ngForm'>
             <mat-card-actions>
                 <mat-form-field class="example-full-width">
-                    <input matInput ngModel name="dateOfVisit" [matDatepicker]="picker"
+                    <input matInput ngModel name="dateOfVisit"
+                           [matDatepicker]="picker"
                            placeholder="Виберіть дату" required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker touchUi #picker></mat-datepicker>

@@ -7,6 +7,7 @@ import {LoginService} from '../../../../../services/login.service';
 import {PatientService} from '../../../../../services/patient.service';
 import {VisitToDoctorService} from '../../../../../services/visit-to-doctor.service';
 import {NgForm} from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
     selector: 'app-doctors',
@@ -40,8 +41,9 @@ export class DoctorsComponent implements OnInit {
 
 
     reservationDate(form: NgForm, doctorId) {
-        this.visitToDoctor.dateOfVisit = form.value.dateOfVisit;
+        this.visitToDoctor.dateOfVisit = moment(form.value.dateOfVisit).format('YYYY-MM-DDT00:00:00.000') + 'Z';
         this.visitToDoctor.timeOfVisit = form.value.timeOfVisit;
+        console.log(form.value.dateOfVisit);
         console.log(this.visitToDoctor);
         this.visitToDoctorService.createVisitToDoctor(this.visitToDoctor, doctorId).subscribe(value => {
             console.log(value);

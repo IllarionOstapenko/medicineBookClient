@@ -13,8 +13,8 @@ export class HistoryVisitsComponent implements OnInit {
     }
 
     ngOnInit() {
-      console.log('HistoryVisitsComponent');
-      this.visitToDoctorService.getAllVisitsByPatientId().subscribe(value => {
+        console.log('HistoryVisitsComponent');
+        this.visitToDoctorService.getAllVisitsByPatientId().subscribe(value => {
             console.log(value);
             this.allPatientVisitsToDoctor = value;
             // console.log(this.allPatientVisitsToDoctor.dateOfVisit);
@@ -22,9 +22,18 @@ export class HistoryVisitsComponent implements OnInit {
     }
 
 
-
     getAllVisitsToDoctor() {
+        console.log('getAllVisitsToDoctor');
+        this.visitToDoctorService.getAllByDateOfVisitBefore().subscribe(value => {
+            console.log(value);
+        });
 
+    }
+
+    get() {
+        this.visitToDoctorService.getByPatientIdAndDate().subscribe(value => {
+            console.log(value);
+        });
     }
 
 

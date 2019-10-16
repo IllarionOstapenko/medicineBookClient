@@ -7,25 +7,28 @@
 <!--            {{visit.dateOfVisit | date}}-->
 <!--        </div>-->
 <!--    </div>-->
-    <div *ngIf="allPatientVisitsToDoctor" class="visit">
-        <mat-card class="example-card" *ngFor="let visit of allPatientVisitsToDoctor">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image " *ngIf="visit.doctor.image">
-                    <img [src]="'http://localhost:8080/images/' + visit.doctor.image || 'assets/img/female-doctor.jpg'"
-                         class="image">
-                </div>
-                <div class="title">
-                    <mat-card-title>{{visit.doctor.surname | titlecase}} {{visit.doctor.name | titlecase}}
-                        {{visit.doctor.fatherName | titlecase}} </mat-card-title>
-                    <mat-card-title>{{visit.doctor.speciality | titlecase}}</mat-card-title>
-                </div>
-            </mat-card-header>
-            <mat-card-content class="content">
-                <p>Дата візиту:{{visit.dateOfVisit | date}}</p>
-                <p>Час візиту:{{visit.timeOfVisit}}</p>
-            </mat-card-content>
+<div *ngIf="allPatientVisitsToDoctor" class="visit">
+    <mat-card class="example-card" *ngFor="let visit of allPatientVisitsToDoctor">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image " *ngIf="visit.doctor.image">
+                <img [src]="'http://localhost:8080/images/' + visit.doctor.image || 'assets/img/female-doctor.jpg'"
+                     class="image">
+            </div>
+            <div class="title">
+                <mat-card-title>{{visit.doctor.surname | titlecase}} {{visit.doctor.name | titlecase}}
+                    {{visit.doctor.fatherName | titlecase}} </mat-card-title>
+                <mat-card-title>{{visit.doctor.speciality | titlecase}}</mat-card-title>
+            </div>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <p>Дата візиту:{{visit.dateOfVisit | date}}</p>
+            <p>Час візиту:{{visit.timeOfVisit}}</p>
+        </mat-card-content>
 
-        </mat-card>
-    </div>
+    </mat-card>
+</div>
 <!--    {{allPatientVisitsToDoctor | json}}-->
 
+
+<!--<button (click)="getAllVisitsToDoctor()">getAllByDate</button>-->
+<button (click)="get()">GET</button>

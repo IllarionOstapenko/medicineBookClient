@@ -1,15 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ImageService} from '../../../../services/image.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm} from '@angular/forms';
 import * as uuid from 'uuid';
 import {Patient} from '../../../../models/patient';
 import {Role} from '../../../../enums/role';
 import {PatientService} from '../../../../services/patient.service';
 
 import {ErrorStateMatcher} from '@angular/material';
-import {FormBuilder, FormGroupDirective, NgForm} from '@angular/forms';
 import {LoginService} from '../../../../services/login.service';
-import {User} from '../../../../models/user';
+import * as moment from 'moment';
 
 
 /** Error when the parent is invalid */
@@ -111,6 +110,8 @@ export class PatientComponent implements OnInit {
                 console.log(value);
             });
         }
+        // console.log(form.value.dateOfBirth);
+        this.patient.dateOfBirth = moment(this.patient.dateOfBirth).format('YYYY-MM-DDT00:00:00.000') + 'Z';
         this.patient.role = Role.ROLE_PATIENT;
         this.patientService.createPatient(this.patient).subscribe(value => {
             console.log(value);
